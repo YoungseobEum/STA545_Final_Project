@@ -4,6 +4,7 @@ locs <- cbind(columbus$x, columbus$y)
 
 
 # GWR
+#col.gwr <- gwr.est(crime ~ income + houseval, locs, columbus, "exp")
 col.bw <- gwr.bw.est(crime ~ income + houseval, locs, columbus, "exp")
 col.gwr <- gwr.est(crime ~ income + houseval, locs, columbus, "exp", bw=col.bw$phi)
 plot(col.gwr$beta[2,], col.gwr$beta[3,])
